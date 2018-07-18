@@ -1,0 +1,6 @@
+1. Complete project duration > days will be called as calender days
+
+2. For editing approved timesheet - admin should reject the entry and then employee will edit it
+No edit option if approved 
+
+3. Expenses should be approved before going to project profitability

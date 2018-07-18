@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Saket Kukde">
+
+    <title><?php echo isset($title) ? $title : "ProActive - Project Management from Stractive"; ?></title>
+
+    <!-- Bootstrap -->
+    <link href="<?php echo base_url("assets/css/materialize.min.css"); ?>" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="<?php echo base_url("assets/css/font-awesome.min.css"); ?>" rel="stylesheet">
+
+    <!-- Summer Note CSS -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+
+    <!-- Toastr CSS -->
+    <link href="<?php echo base_url('assets/css/toastr.min.css'); ?>" rel="stylesheet">
+
+    <!-- jQuery selectBoxIt CSS -->
+    <link href="<?php echo base_url('assets/css/jquery.selectBoxIt.css'); ?>" rel="stylesheet">
+
+    <!-- Dropzone CSS -->
+    <link href="<?php echo base_url('assets/css/dropzone.min.css'); ?>" rel="stylesheet">
+
+    <!-- Select Multiple CSS -->
+    <link href="<?php echo base_url('assets/css/multi-select.css'); ?>" rel="stylesheet">
+
+    <!-- Jquery Ui CSS -->
+    <link href="<?php echo base_url('assets/css/jquery-ui.min.css'); ?>" rel="stylesheet">
+
+    <!-- Jquery Ui Theme CSS -->
+    <link href="<?php echo base_url('assets/css/jquery-ui.theme.min.css'); ?>" rel="stylesheet">
+
+    <!-- Tagit  CSS -->
+    <link href="<?php echo base_url('assets/css/jquery.tagit.css'); ?>" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link href="<?php echo base_url('assets/css/style.css'); ?>" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="<?php echo base_url("assets/images/favicon.ico"); ?>">
+
+
+  
+
+</head>
+
+<body class="whole-bg">
+
+    <div id="preloader"></div>
+
+    <?php
+
+        $this->load->view('layout/header');
+
+     ?>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <?php
+
+            $this->load->view($content);
+
+        ?>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright 2016 &copy; Pratham Professional Academy. Powered by <a href="http://www.atgccts.com" class="no_anchor_decoration">ATGC </a></p>
+                    <p>
+                        <a href="<?php echo site_url("site/privacy_policy"); ?>" class="dark-link small">Privacy Policy</a>&nbsp;&nbsp;
+                        <a href="<?php echo site_url("site/terms_and_conditions"); ?>" class="dark-link small">Terms and Conditions</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- Sign In Modal -->
+    <div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="SignInModalLabel" style="padding-right: 0px;">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="SignInModalLabel">Sign In</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form" name="login_form" id="login_form" action="<?php echo site_url('site/auth_user'); ?>" method="POST">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="modalEmail" id="modalEmail" placeholder="example@domain.com" autofocus="autofocus" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="modalPassword" id="modalPassword" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <p class="text-left"><a href="<?php echo site_url('site/forgot'); ?>" class="no_anchor_decoration">Forgot Password?</a></p>
+                </div>
+
+                <!-- <button id="modalSigninBtn" class="btn btn-primary btn-lg btn-block">Sign In</button> -->
+                <input type="submit" name="modalSigninBtn" id="modalSigninBtn" value="Sign In" class="btn btn-primary btn-lg btn-block">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <p class="text-left">Not a registered user? <a href="<?php echo site_url('site/signup'); ?>" class="no_anchor_decoration">Register Now</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+    <!-- /.container -->
+
+<!-- Scrpits -->
+  <!-- // -->
+    <!-- jQuery JS -->
+    <script src="<?php echo base_url('assets/js/jquery-2.1.4.min.js'); ?>"></script>
+    <!-- jQuery UI JS -->
+    <script src="<?php echo base_url('assets/js/jquery-ui.min.js'); ?>"></script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+
+    <!-- jQuery selectBoxIt JS -->
+    <script src="<?php echo base_url('assets/js/jquery.selectBoxIt.min.js'); ?>"></script>
+
+    <!-- dropzone JS -->
+    <script src="<?php echo base_url('assets/js/dropzone.min.js'); ?>"></script>
+
+    <!-- Toastr JS -->
+    <script src="<?php echo base_url('assets/js/toastr.min.js'); ?>"></script>
+    <!-- // -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(this).scrollTop(0);
+
+            $(window).load(function(){
+                 $('#preloader').fadeOut('slow',function() {$(this).remove();});
+            });
+        });
+    </script>
+<!-- Scripts end -->
+
+    <!-- Global Variable -->
+    <script type="text/javascript">
+        var site_url = "<?php echo site_url(); ?>";
+        var base_url = "<?php echo base_url(); ?>";
+    </script>
+
+    <script type="text/javascript">
+    $('#SignInModal').on('shown.bs.modal', function () {
+      $('#modalEmail').focus();
+    });
+    </script>
+
+    <!-- Summer Note JS -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+
+    <!-- Validation -->
+    <script src="<?php echo base_url('assets/js/jquery.validate.min.js'); ?>"></script>
+
+    <!-- Custom Script -->
+    <script src="<?php echo base_url('assets/js/app.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/scripts/validation_script.js'); ?>"></script>
+
+
+
+</body>
+
+</html>

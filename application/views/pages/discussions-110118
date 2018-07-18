@@ -1,0 +1,15 @@
+Reports/Analytics expected from PMT
+	Gross Profit from project
+		Timesheet will be input for analytics
+		Resource Expenses for project will be salary per day plus billable bonus for the day
+		8 hours of work done for project will be considered as a day or vice versa
+		Resource bill will be added to registered expenses alongwith some project level expenses
+		Revenue of project (i.e. invoices paid) will be recorded seperately in admin panel
+		[UI PENDING]
+
+
+	Billability Report - Pivot to Resource
+		Percentage of utilisation of an employee in selected month
+		A month has 20-21 days multiplied by 8 hours
+		Total utilisation will be percentage of timesheet hours by 160-168 hours
+		Drill down should be provided to show individual's work hours per project

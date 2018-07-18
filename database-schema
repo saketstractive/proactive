@@ -1,0 +1,26 @@
+resource
+project
+timesheet
+expenses
+project_resource
+
+MAPPING
+timesheet > resource,project
+expenses > resource,project
+project > resource
+
+DATA TABLES
+resource
+res_id, res_name, res_designation, res_base, res_bonus, res_expertise,res_date_created, res_date_modified
+
+project 
+pro_id, pro_title, pro_client, pro_description, pro_onsite_start, pro_onsite_end, pro_onsite_days, pro_offshore_start, pro_offshore_end, pro_offshore_days, pro_expertise,pro_date_created, pro_date_modified
+
+project_resource
+project_id, resource_id, date_created, date_modified
+
+timesheet
+tm_id, tm_proid,tm_resid,tm_date,tm_hours,tm_description, tm_date_created, tm_date_modified
+
+expenses
+ex_id, ex_proid,ex_resid,ex_date,ex_title,ex_head,ex_description, ex_amount,ex_frequency, ex_date_created, ex_date_modified

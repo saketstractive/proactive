@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>ProActive - Add Project </title>
+
+      <style type="text/css">
+  
+  @media(min-width: 768px){
+    body{
+    background: url(assets/images/whole-bg-white-maze.png);
+    }
+  }      
+  
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .square-btn{
+    width: 150px !important;
+    height: 150px !important;
+    border: 1px solid rgb(0,0,50);
+  }
+
+  .all-p-15{
+    padding: 15px;
+  }
+
+  .min-ht{
+    min-height: 400px;
+    padding-bottom: 10px;
+  }
+      
+      </style>
+    </head>
+
+    <body class="grey lighten-2">
+
+      <!-- <div class="container"> -->
+        <nav class="light-red">
+        <div class="nav-wrapper">
+          <a href="login.html" class="brand-logo right"><span class="chip">Logout</span></a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a onclick="show('#project')"><i class="fa fa-th-large"></i> Project</a></li>
+            <li><a onclick="show('#resource')"> <i class="fa fa-user"></i> Resources</a></li>
+            <li><a onclick="show('#accounts')"><i class="fa fa-dollar"></i> Accounts</a></li>
+            <li><a onclick="show('#work')"><i class="fa fa-clock-o"></i> Timesheet</a></li>
+          </ul>
+        </div>
+      </nav>
+    <!-- </div> -->
+    
+      <nav class="red lighten-2 extra-nav" id="project">
+        <div class="nav-wrapper">
+          <ul id="nav-mobile" class="hide-on-med-and-down">
+            <li><a href="add-project.html"><i class="fa fa-plus"></i> Add Project</a></li>
+            <li><a href="view-project.html"> <i class="fa fa-list"></i> List Projects</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <nav class="red lighten-2 extra-nav" id="resource">
+        <div class="nav-wrapper">
+          <ul id="nav-mobile" class="hide-on-med-and-down">
+            <li><a href="add-resource.html"><i class="fa fa-plus"></i> Add Resource</a></li>
+            <li><a href="view-resources.html"> <i class="fa fa-list"></i> List Resources</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <nav class="red lighten-2 extra-nav" id="accounts">
+        <div class="nav-wrapper">
+          <ul id="nav-mobile" class="hide-on-med-and-down">
+            <li><a href="add-expenses.html"><i class="fa fa-plus"></i> Add Expenses</a></li>
+            <li><a href="reports.html"> <i class="fa fa-list"></i> Reports</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <nav class="red lighten-2 extra-nav" id="work">
+        <div class="nav-wrapper">
+          <ul id="nav-mobile" class="hide-on-med-and-down">
+            <li><a href="update-timesheet.html"> <i class="fa fa-list"></i> Update Timesheet</a></li>
+            <li><a href="view-timesheet.html"><i class="fa fa-plus"></i> Project History</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container white min-ht">
+        <div class="row center">
+          <div class="col s10 m6 offset-m1 l6 offset-l1">
+                    <!-- <br /><br /> -->
+          <h6 class="green-text lighten-text-2 left-align">Welcome Saket Kukde</h6>            
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col s10 offset-s1 m10 offset-m1 l10 offset-l1">
+            <h5 id="time-head" class="red-text">Timesheet </h5>
+          </div>
+          <div class="col s12 m12 l12">
+            <hr>
+          </div>
+        </div>
+        
+        <!-- Update Timesheet Starts -->
+        <div class="row" id="update-form">
+        <form action="map-resources.html" method="post">
+      <div class="row card red white-text z-depth-3">
+        <div class="input-field col s6">
+          <h6 for="project_name">Project Name: <b>AWT</b></h6>
+        </div>
+        <div class="input-field col s6">
+          <h6 for="client_name">Client: <b>Attract Pvt Ltd</b></h6>
+        </div>
+      </div>
+      <div class="row card z-depth-3">
+        <div class="col s12 card-title">
+          Your contribution
+          <h6 id="btn_add_resource" class="right"><i class="fa fa-plus-circle red-text"></i> Add More</h6>
+          <hr class="red-text" />
+        </div>
+        <div class="col s12 m12 l12">
+          <table class="centered " id="table-append">
+            <thead>
+              <tr>
+                <td></td><td></td><td></td><td></td>
+                <td>
+                  <input class="btn red" type="submit" name="submit" value="Update Timesheet" /> 
+                </td>                
+              </tr>
+              <tr>
+                <th>Project</th>
+                <th>Date</th>
+                <th>Billable Hours</th>     
+                <th>Work done</th>   
+                <th >Action</th>  
+              </tr>
+            </thead>
+          </table>
+          <hr />
+          <table class="striped centered">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Billable Hours</th>
+                <th>Work done</th>
+                <th>Project</th>     
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+              <td>29-Nov-2017</td>
+              <td>4 Hours</td>
+              <td>Created Application FinPlan</td>
+              <td>AZF</td>
+              </tr>
+              <tr>
+              <td>27-Nov-2017</td>
+              <td>4 Hours</td>
+              <td>Migrated from version 9 to 11</td>
+              <td>AZF</td>
+              </tr>
+              <tr>
+              <td>24-Nov-2017</td>
+              <td>4 Hours</td>
+              <td>Created Application SubjFin</td>
+              <td>EZest</td>
+              </tr>
+              <tr>
+              <td>23-Nov-2017</td>
+              <td>4 Hours</td>
+              <td>Deleted Application FinPlan</td>
+              <td>SCorp</td>
+              </tr>
+              
+            </tbody>
+          </table>
+          
+        </div>
+        
+      </div>
+      <div class="row">
+          <div class="col s12 m12 l12">
+            <hr />
+          </div>
+        </div>
+    </form>
+        </div>
+
+        
+      </div>
+      
+       <footer class="page-footer red">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">We can write instructions or quick tips here if we have any</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            &copy; 2017 Copyright 
+            <a class="grey-text text-lighten-4 right" href="#!">Developed by Stractive</a>
+            </div>
+          </div>
+        </footer>
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+      <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+
+
+      <script type="text/javascript">
+        $(document).on("ready", function () {
+        $(".extra-nav").hide();
+        $(".project-info").hide();
+        // $("#update-form").hide();
+        $("#table-append").hide();
+
+        $("#btn_add_resource").on("click", function () {
+          $("#table-append").show();
+          var add_id = $("#table-append tr").length;
+            $("#table-append").append("<tr><td><select name='project' class='validate'><option>AZF</option><option>SCorp</option><option>EZest</option></select></td><td><input type='date' name='date"+add_id+"' class='validate' /></td><td><input type='number' class='validate' name='hours"+add_id+"'/></td><td><textarea class='materialize-textarea'></textarea></td><td ><a class='red-text'><i class='fa fa-trash'></i></a></td></tr>");
+            
+            $('select').material_select();
+            $(".fa-trash").on("click", function(){
+                $(this).parent().parent().parent().remove();
+                if($("#table-append tr").length == 2) $("#table-append").hide();
+              });
+
+          });
+
+        $(".square-btn").on("click", function(){
+          var name = $(this).children().text();
+          if (confirm("Are you sure, you want to access "+name)) {
+            $("#time-head").append(" > "+name+" <span id='close' class='chip right'>Close</span>");
+            $("#update-form").show();
+            $("#select-project").hide();
+            $("#close").on("click", function(){
+              $("#time-head").text("Timesheet");
+              $("#select-project").show();
+              $("#update-form").hide();
+            });
+            // $(this).attr("data-id");
+          }       
+        });
+
+        }); // end of ready
+
+        function show(selector){
+
+          $(".extra-nav").each(function(){
+            if ("#" + $(this).attr("id") != selector) {
+              $(this).hide();
+            }
+          });
+          $(".project-info").each(function(){
+            if ("#" + $(this).attr("id") != selector) {
+              $(this).hide();
+            }
+          });
+          $(selector).toggle();
+        }
+      </script>
+    </body>
+  </html>

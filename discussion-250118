@@ -1,0 +1,19 @@
+Application review for ProActive
+
+1. Total of a day's work should not exceed 12 hours in timehseet
+
+2. In timehseet the project already added are initially disabled, but two project names appear on press of add button
+	
+	ADDITION: Existing hours cannot be deleted. Even if set to zero. The zero is not updated in worksheet.
+			  If resource, project and date is same; the hours should sum up in one row
+
+3. Estimated days should appear in map resource module to ease the work allocation 
+
+4. Label for status of approval should be present as color of text is not appealing (Submit/Approved/Rejected)
+	There will be two possibilities
+	1. Sumbitted -> Rejected -> Reason
+	2. Submitted -> Approved
+
+5.Input for Project should be first, in expense form, then head, then justification(instead of title). Hide frequency for now as it does not match with current agenda
+
+6. No conflict of authority between two admin account. Exclusive project creation 

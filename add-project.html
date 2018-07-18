@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+
+      <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/jquery.tagit.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>ProActive - Add Project </title>
+
+      <style type="text/css">
+  
+  @media(min-width: 768px){
+    body{
+    background: url(assets/images/whole-bg-white-maze.png);
+    }
+  }      
+  
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+      
+      </style>
+    </head>
+
+    <body class="grey lighten-2">
+
+      <!-- <div class="container"> -->
+        <nav class="light-red">
+        <div class="nav-wrapper">
+          <a href="login.html" class="brand-logo right"><span class="chip">Logout</span></a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a onclick="show('#project')"><i class="fa fa-th-large"></i> Project</a></li>
+            <li><a onclick="show('#resource')"> <i class="fa fa-user"></i> Resources</a></li>
+            <li><a onclick="show('#accounts')"><i class="fa fa-dollar"></i> Accounts</a></li>
+            <li><a onclick="show('#work')"><i class="fa fa-clock-o"></i> Timesheet</a></li>
+          </ul>
+        </div>
+      </nav>
+    <!-- </div> -->
+    
+      <nav class="red lighten-2 extra-nav" id="project">
+        <div class="nav-wrapper">
+          <ul id="nav-mobile" class="hide-on-med-and-down">
+            <li><a href="add-project.html"><i class="fa fa-plus"></i> Add Project</a></li>
+            <li><a href="view-project.html"> <i class="fa fa-list"></i> List Projects</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <nav class="red lighten-2 extra-nav" id="resource">
+        <div class="nav-wrapper">
+          <ul id="nav-mobile" class="hide-on-med-and-down">
+            <li><a href="add-resource.html"><i class="fa fa-plus"></i> Add Resource</a></li>
+            <li><a href="view-resources.html"> <i class="fa fa-list"></i> List Resources</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <nav class="red lighten-2 extra-nav" id="accounts">
+        <div class="nav-wrapper">
+          <ul id="nav-mobile" class="hide-on-med-and-down">
+            <li><a href="add-expenses.html"><i class="fa fa-plus"></i> Add Expenses</a></li>
+            <li><a href="reports.html"> <i class="fa fa-list"></i> Reports</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <nav class="red lighten-2 extra-nav" id="work">
+        <div class="nav-wrapper">
+          <ul id="nav-mobile" class="hide-on-med-and-down">
+            <li><a href="update-timesheet.html"> <i class="fa fa-list"></i> Update Timesheet</a></li>
+            <li><a href="view-timesheet.html"><i class="fa fa-plus"></i> Project History</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container white">
+        <div class="row center">
+          <div class="col s10 m6 offset-m1 l6 offset-l1">
+                    <!-- <br /><br /> -->
+          <h6 class="green-text lighten-text-2 left-align">Welcome Saket Kukde</h6>            
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col s6 offset-s1 m6 offset-m1 l6 offset-l1">
+            <h5 class="red-text">Add Project </h5>
+          </div>
+          <div class="col s12 m12 l12">
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+        <form class="container" action="map-resources.html" method="post">
+      <div class="row card z-depth-3">
+        <div class="col s12 card-title">
+          Project Details
+          <hr class="red-text" />
+        </div>
+        <div class="input-field col s6">
+          <input id="project_name" type="text" class="validate">
+          <label for="project_name">Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="client_name" type="text" class="validate">
+          <label for="client_name">Client</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea class="materialize-textarea" id="description" class="validate"></textarea>
+          <label for="description">Description</label>
+        </div>
+       </div>
+       <div class="row card z-depth-3">
+        <div class="col s12">
+          <p>Duration</p>
+          <hr />
+        </div>
+        <div class="col s12">
+          On-Site duration
+        </div>
+        <div class="input-field col s4">
+          <input type="date" id="on_start_date" name="on_start_date" class="datepicker">
+          <label for="on_start_date">Start date</label>
+        </div>
+        <div class="input-field col s4">
+          <input type="date" id="on_end_date" name="on_end_date" class="datepicker">
+          <label for="on_end_date">Estimated End Date</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="ondays" type="text" name="ondays" value="0" />
+          <label for="ondays">Onsite Days</label>
+        </div>
+        <div class="col s12">
+          Offshore duration
+        </div>
+        <div class="input-field col s4">
+          <input type="date" id="off_start_date" name="off_start_date" class="datepicker">
+          <label for="off_start_date">Start date</label>
+        </div>
+        <div class="input-field col s4">
+          <input type="date" id="off_end_date" name="off_end_date" class="datepicker">
+          <label for="off_end_date">Estimated End Date</label>
+        </div>
+        <div class="input-field col s4">
+          <input type="text" name="offdays" id="offdays" value="0">
+          <label for="offdays">Offshore Days</label>
+        </div>
+      </div>
+      <div class="row card z-depth-3">
+        <div class="input-field col s8">
+          <h6>Expertise Required</h6>
+          <hr />
+          <h6><small>(Press TAB after each entry)</small></h6>
+          <input class="form-control tagit-hidden-field" id="expertise" name="expertise" type="text" />
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 offset-s3">
+          <input class="btn red " type="submit" name="submit" value="Create Now" />         
+        </div>
+      </div>
+    </form>
+        </div>
+
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <hr />
+          </div>
+        </div>
+      </div>
+      
+       <footer class="page-footer red">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">We can write instructions or quick tips here if we have any</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            &copy; 2017 Copyright 
+            <a class="grey-text text-lighten-4 right" href="#!">Developed by Stractive</a>
+            </div>
+          </div>
+        </footer>
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+      <script type="text/javascript" src="assets/js/tag-it.min.js"></script>
+      <script type="text/javascript" src="assets/js/toastr.min.js"></script>
+      <script type="text/javascript">
+        $(document).on("ready", function () {
+        $(".extra-nav").hide();
+        $(".project-info").hide();
+
+        $("#expertise").tagit({
+          caseSensitive : false,
+        allowDuplicates : false,
+        allowSpaces:true,
+        tagLimit:10,
+        onTagExists: function(event, ui) {
+          toastr.options.timeOut = 5000;
+          toastr.options.positionClass = "toast-bottom-right";
+          toastr.warning('Duplicate words not allowed');
+        },
+        onTagLimitExceeded: function(event, ui) {
+          toastr.options.timeOut = 5000;
+          toastr.options.positionClass = "toast-bottom-right";
+          toastr.warning('Maximum 10 words allow');
+        }
+        });
+
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 4, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'OK',
+            closeOnSelect: true // Close upon selecting a date,
+          });
+        
+        $(".datepicker").change(function(){
+          if ($("#on_start_date").val() != "" && $("#on_end_date").val() != "" )
+          {
+            var date1 = new Date($("#on_start_date").val());
+            var date2 = new Date($("#on_end_date").val());
+            var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+            var weeks = Math.floor(diffDays / 7);
+            diffDays = diffDays - weeks * 2;
+            $("#ondays").val(diffDays);
+          }
+
+          if ($("#off_start_date").val() != "" && $("#off_end_date").val() != "" )
+          {
+            var date1 = new Date($("#off_start_date").val());
+            var date2 = new Date($("#off_end_date").val());
+            var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+            var weeks = Math.floor(diffDays / 7);
+            diffDays = diffDays - weeks * 2;
+            $("#offdays").val(diffDays);
+          }
+        });
+
+        });
+
+        function show(selector){
+
+          $(".extra-nav").each(function(){
+            if ("#" + $(this).attr("id") != selector) {
+              $(this).hide();
+            }
+          });
+          $(".project-info").each(function(){
+            if ("#" + $(this).attr("id") != selector) {
+              $(this).hide();
+            }
+          });
+          $(selector).toggle();
+        }
+      </script>
+    </body>
+  </html>
